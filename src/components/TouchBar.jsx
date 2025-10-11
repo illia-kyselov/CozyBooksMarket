@@ -1,6 +1,7 @@
 import React, { useMemo } from 'react';
-import { View, Pressable, StyleSheet } from 'react-native';
+import { View, Pressable, StyleSheet, Dimensions } from 'react-native';
 import { useNavigation, useRoute } from '@react-navigation/native';
+import { useSafeAreaInsets } from 'react-native-safe-area-context';
 
 import Icon1 from './svg/TouchBarIcons/Icon1SVG';
 import Icon1Active from './svg/TouchBarIcons/Icon1OnPressSVG';
@@ -29,9 +30,11 @@ const ROUTES_BY_INDEX = {
     4: 'Settings',
 };
 
-export default function TouchBar({ activeIndex, top = 732, left = 66 }) {
+export default function TouchBar({ activeIndex }) {
     const navigation = useNavigation();
     const route = useRoute();
+    const insets = useSafeAreaInsets();
+    
     const routeToIndex = useMemo(
         () => ({ Main: 0, MyOrders: 1, MyBooks: 2, Quiz: 3, Settings: 4 }),
         []
@@ -42,8 +45,16 @@ export default function TouchBar({ activeIndex, top = 732, left = 66 }) {
             ? activeIndex
             : (routeToIndex[route?.name] ?? 0);
 
+    // Адаптивное позиционирование для всех размеров экрана
+    const screenHeight = Dimensions.get('window').height;
+    const screenWidth = Dimensions.get('window').width;
+    
+    // Вычисляем позицию снизу экрана с учетом safe area
+    const bottomPosition = insets.bottom + 16; // 16px отступ от низа
+    const centerPosition = (screenWidth - 258) / 2; // центрируем по горизонтали (258 - ширина таббара)
+
     return (
-        <View style={[styles.container, { top, left }]}>
+        <View style={[styles.container, { bottom: bottomPosition, left: centerPosition }]}>
             {ICONS.map(({ Default, Active }, idx) => {
                 const Icon = idx === currentActive ? Active : Default;
                 return (
@@ -84,6 +95,7 @@ const styles = StyleSheet.create({
         shadowOpacity: 0.15,
         shadowRadius: 8,
         shadowOffset: { width: 0, height: 3 },
+        // Убираем фиксированную позицию top, теперь используем bottom
     },
     iconBtn: {
         width: 42,

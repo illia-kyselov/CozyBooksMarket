@@ -133,6 +133,7 @@ export default function MainScreen() {
 
     const handleBuy = (book) => {
         const badges = BADGES_BY_ID[book.id] || [];
+        badges.trackPurchaseIntent({ bookId: book.id, title: book.title });
         navigation.navigate('BookInfo', { book, badges });
     };
 

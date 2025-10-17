@@ -5,7 +5,7 @@ import BuyButtonSVG from '../components/svg/BuyButtonSVG';
 
 const COLORS = {
     whiteText: '#F1F1F1',
-    pinkPrice: '#FF78E4',
+    pinkPrice: '#FF6B9D',
 };
 
 export default function BookBlockMain({
@@ -62,9 +62,14 @@ const styles = StyleSheet.create({
     bookIconOuter: {
         width: 165,
         height: 236,
-        borderRadius: 30,
+        borderRadius: 24,
         overflow: 'hidden',
         position: 'relative',
+        shadowColor: '#000',
+        shadowOffset: { width: 0, height: 4 },
+        shadowOpacity: 0.2,
+        shadowRadius: 6,
+        elevation: 5,
     },
     bookIconImage: {
         width: '100%',
@@ -83,20 +88,20 @@ const styles = StyleSheet.create({
         zIndex: 2,
     },
     bookTitle: {
-        marginTop: 8,
+        marginTop: 10,
         fontFamily: 'SFPro-Regular',
-        fontSize: 24,
-        letterSpacing: -0.32,
+        fontSize: 23,
+        letterSpacing: -0.28,
         color: COLORS.whiteText,
     },
     bookPrice: {
-        marginTop: 8,
+        marginTop: 10,
         fontFamily: 'SFPro-Regular',
-        fontSize: 24,
-        letterSpacing: -0.32,
+        fontSize: 23,
+        letterSpacing: -0.28,
         color: COLORS.pinkPrice,
     },
     buyBtnWrapper: {
-        marginTop: 8,
+        marginTop: 10,
     },
 });

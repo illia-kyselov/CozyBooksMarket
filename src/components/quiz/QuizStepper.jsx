@@ -96,48 +96,53 @@ const styles = StyleSheet.create({
     container: { width: '100%', alignItems: 'center' },
 
     progress: {
-        marginTop: 122,
+        marginTop: 125,
         textAlign: 'center',
         fontFamily: 'Slackey-Regular',
-        fontSize: 30,
+        fontSize: 32,
         letterSpacing: -0.32,
-        color: '#FCFF3C',
+        color: '#6EC1E4',
     },
 
     questionTitle: {
-        marginTop: 50,
+        marginTop: 52,
         color: '#fff',
         textAlign: 'center',
         fontFamily: 'Slackey-Regular',
-        fontSize: 20,
+        fontSize: 21,
     },
 
     optionsWrap: {
         width: '100%',
-        marginTop: 50,
-        gap: 16,
+        marginTop: 52,
+        gap: 18,
         alignItems: 'center',
     },
 
     optionBase: {
         width: 351,
-        height: 55,
-        borderRadius: 30,
+        height: 58,
+        borderRadius: 25,
         flexDirection: 'row',
         alignItems: 'center',
-        paddingLeft: 22,
-        paddingRight: 16,
+        paddingLeft: 24,
+        paddingRight: 18,
+        shadowColor: '#000',
+        shadowOffset: { width: 0, height: 2 },
+        shadowOpacity: 0.15,
+        shadowRadius: 4,
+        elevation: 3,
     },
 
     optionDefault: {
-        borderWidth: 1,
-        borderColor: '#FCB998',
+        borderWidth: 1.5,
+        borderColor: '#FFB899',
         backgroundColor: 'transparent',
     },
 
     optionSelected: {
         borderWidth: 0,
-        backgroundColor: '#9747FF',
+        backgroundColor: '#A855F7',
     },
 
     optionIndex: {
@@ -148,7 +153,7 @@ const styles = StyleSheet.create({
         fontSize: 24,
         letterSpacing: -0.32,
     },
-    indexDefault: { color: '#FCB998' },
+    indexDefault: { color: '#FFB899' },
     indexSelected: { color: '#F1F1F1' },
 
     optionText: {
@@ -158,6 +163,6 @@ const styles = StyleSheet.create({
         fontSize: 24,
         letterSpacing: -0.32,
     },
-    optionTextDefault: { color: '#FCB998' },
+    optionTextDefault: { color: '#FFB899' },
     optionTextSelected: { color: '#F1F1F1' },
 });

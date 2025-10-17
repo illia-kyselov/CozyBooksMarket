@@ -34,7 +34,7 @@ export default function TouchBar({ activeIndex }) {
     const navigation = useNavigation();
     const route = useRoute();
     const insets = useSafeAreaInsets();
-    
+
     const routeToIndex = useMemo(
         () => ({ Main: 0, MyOrders: 1, MyBooks: 2, Quiz: 3, Settings: 4 }),
         []
@@ -46,12 +46,11 @@ export default function TouchBar({ activeIndex }) {
             : (routeToIndex[route?.name] ?? 0);
 
     // Адаптивное позиционирование для всех размеров экрана
-    const screenHeight = Dimensions.get('window').height;
     const screenWidth = Dimensions.get('window').width;
-    
+
     // Вычисляем позицию снизу экрана с учетом safe area
     const bottomPosition = insets.bottom + 16; // 16px отступ от низа
-    const centerPosition = (screenWidth - 258) / 2; // центрируем по горизонтали (258 - ширина таббара)
+    const centerPosition = (screenWidth - 268) / 2; // центрируем по горизонтали (268 - ширина таббара)
 
     return (
         <View style={[styles.container, { bottom: bottomPosition, left: centerPosition }]}>
@@ -81,26 +80,26 @@ export default function TouchBar({ activeIndex }) {
 const styles = StyleSheet.create({
     container: {
         position: 'absolute',
-        width: 258,
-        height: 62,
-        backgroundColor: '#FCFF3C',
-        borderRadius: 40,
-        padding: 10,
+        width: 268,
+        height: 66,
+        backgroundColor: '#6EC1E4',
+        borderRadius: 33,
+        padding: 12,
         flexDirection: 'row',
         alignItems: 'center',
         justifyContent: 'space-between',
         zIndex: 10,
-        elevation: 6,
+        elevation: 8,
         shadowColor: '#000',
-        shadowOpacity: 0.15,
-        shadowRadius: 8,
-        shadowOffset: { width: 0, height: 3 },
+        shadowOpacity: 0.22,
+        shadowRadius: 10,
+        shadowOffset: { width: 0, height: 4 },
         // Убираем фиксированную позицию top, теперь используем bottom
     },
     iconBtn: {
         width: 42,
         height: 42,
-        borderRadius: 12,
+        borderRadius: 14,
         alignItems: 'center',
         justifyContent: 'center',
     },

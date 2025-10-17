@@ -3,7 +3,7 @@ import { View, Text, StyleSheet } from 'react-native';
 
 const COLORS = {
     bg: '#F1F1F1',
-    title: '#007ADB',
+    title: '#0088CC',
     text: '#0A0A0A',
 };
 
@@ -30,20 +30,20 @@ export default function OrderPlacedCard({
 const styles = StyleSheet.create({
     card: {
         width: 350,
-        height: 203,
-        borderRadius: 40,
+        height: 210,
+        borderRadius: 28,
         backgroundColor: COLORS.bg,
-        paddingTop: 36,
-        paddingRight: 24,
-        paddingBottom: 36,
-        paddingLeft: 24,
+        paddingTop: 38,
+        paddingRight: 26,
+        paddingBottom: 38,
+        paddingLeft: 26,
         alignItems: 'center',
         justifyContent: 'center',
         shadowColor: '#000',
-        shadowOpacity: 0.15,
+        shadowOpacity: 0.22,
         shadowOffset: { width: 0, height: 6 },
-        shadowRadius: 12,
-        elevation: 6,
+        shadowRadius: 14,
+        elevation: 8,
     },
     title: {
         fontFamily: 'SFPro-Semibold',

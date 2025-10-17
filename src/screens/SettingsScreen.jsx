@@ -21,10 +21,10 @@ const TITLE_H = 40;
 const HEADER_MARGIN_TOP = 92;
 
 const COLORS = {
-    yellow: '#FCFF3C',
+    yellow: '#6EC1E4',
     black: '#0A0A0A',
     white: '#F1F1F1',
-    blueText: '#005AA2',
+    blueText: '#0077B3',
 };
 
 const TOUCHBAR_HEIGHT = 72;
@@ -128,17 +128,22 @@ const styles = StyleSheet.create({
     },
     option: {
         width: 350,
-        height: 62,
-        borderRadius: 40,
+        height: 66,
+        borderRadius: 28,
         backgroundColor: COLORS.white,
-        paddingTop: 8,
-        paddingBottom: 8,
-        paddingLeft: 31,
-        paddingRight: 31,
-        marginTop: 12,
+        paddingTop: 10,
+        paddingBottom: 10,
+        paddingLeft: 32,
+        paddingRight: 32,
+        marginTop: 14,
         flexDirection: 'row',
         alignItems: 'center',
         justifyContent: 'space-between',
+        shadowColor: '#000',
+        shadowOffset: { width: 0, height: 3 },
+        shadowOpacity: 0.16,
+        shadowRadius: 5,
+        elevation: 4,
     },
     optionText: {
         fontFamily: 'SFPro-Semibold',

@@ -37,7 +37,7 @@ const COVER_NIGHT_CIRCUS = require('../assets/images/books/NightCircus6.png');
 const COVER_EDUCATED = require('../assets/images/books/EducatedBy7.png');
 const COVER_SNOW_CHILD = require('../assets/images/books/SnowChild8.png');
 
-const COLORS = { yellow: '#FCFF3C', black: '#0A0A0A', transparent: 'transparent' };
+const COLORS = { yellow: '#6EC1E4', black: '#0A0A0A', transparent: 'transparent' };
 const TOUCHBAR_HEIGHT = 72;
 
 const BADGES_BY_ID = {
@@ -215,20 +215,25 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         justifyContent: 'flex-start',
     },
-    logoWrapper: { marginTop: 92 },
+    logoWrapper: { marginTop: 88 },
     tabsRow: {
         flexDirection: 'row',
-        gap: 14,
+        gap: 16,
         justifyContent: 'center',
         alignItems: 'center',
-        marginTop: 35,
+        marginTop: 38,
     },
     segmentBase: {
         width: 165,
-        height: 47,
-        borderRadius: 30,
+        height: 50,
+        borderRadius: 25,
         alignItems: 'center',
         justifyContent: 'center',
+        shadowColor: '#000',
+        shadowOffset: { width: 0, height: 2 },
+        shadowOpacity: 0.15,
+        shadowRadius: 4,
+        elevation: 3,
     },
     segmentActive: { backgroundColor: COLORS.yellow, borderWidth: 0 },
     segmentInactive: {
@@ -249,12 +254,12 @@ const styles = StyleSheet.create({
         flexWrap: 'wrap',
         justifyContent: 'flex-start',
         paddingHorizontal: 20,
-        marginTop: 37,
+        marginTop: 40,
     },
     gridItem: {
         width: 165,
         marginRight: 19,
-        marginBottom: 32,
+        marginBottom: 36,
     },
     gridItemLast: {
         marginRight: 0,
